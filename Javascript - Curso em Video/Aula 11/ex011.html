@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Descubra sua Nacionalidade</title>
+    <style>
+        body{
+            color:#3d3b3b;
+            font-size: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        #container{
+            padding: 1%;
+            padding-bottom: 3%;
+            background: rgb(241, 181, 67);
+            width: auto;
+            max-width: 500px;
+            min-height: 160px;
+            margin: auto;
+            border-radius: 10px;
+        }
+        #res{
+            text-align: center;
+            background: #3d3b3b;
+            margin: auto;
+            margin-top: 5%;
+            width: 40%;
+            border-radius: 20px;
+            color: white;
+            font-size: 130%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1> Descubra sua Nacionalidade </h1>
+        País de Origem: <input type="text" name="txtpais" id="txtpais">
+        <input type="button" value="ENVIAR" onclick="nacionalidade()">
+        <div id="res" onmousemove="padrao()"><strong>???</strong></div>
+    </div>
+
+    <script>
+        var res = document.querySelector('div#res')
+        function padrao(){
+            res.style.background = '#3d3b3b'
+            res.innerHTML = '<strong>???</strong>'
+        }
+        function nacionalidade(){
+            var txtpais = document.getElementById('txtpais')
+            var pais = String(txtpais.value).toUpperCase()
+            if(pais=='BRASIL'){
+                res.innerHTML = 'Você é Brasileiro!'
+                res.style.background = 'green'
+            }else{
+                res.innerHTML = 'Você é Estrangeiro!'
+                res.style.background = 'red'
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
